@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voici mes liste de recettes{% endblock %}
+
+{% block main %}
+<ul class="list-unstyled">
+
+    {% for meal in meals %}
+        <li>
+           <div class="card">
+                <h5 class="card-header">{{ meal.name }}</h5>
+                <div class="card-body">
+                    <p class="card-text">{{ meal.category }}</p>
+                    <img src="{{ meal.image }}" width="200" height="200" class="d-inline-block align-top" alt="" loading="lazy">
+                    <a href="" class="btn btn-outline-primary">Voir la recette</a>
+
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+    
+</ul>
+{% endblock %}
